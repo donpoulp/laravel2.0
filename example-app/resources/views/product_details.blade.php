@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Panier</title>
-</head>
-<body>
-    <h1>Produit {{ $test }}</h1>
-</body>
-</html>
+@extends('template')
+@section('titre', 'Poduct')
+
+@section('h1')
+Produit {{ $test }}
+@endsection
+
+@section('contenue')
+@endsection
+
+    {{-- <h1 class="container text-center">Produit {{ $test }}</h1> --}}
