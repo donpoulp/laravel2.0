@@ -35,4 +35,13 @@
     box-shadow: #222 1px 0 10px;
     text-decoration: underline;
   }
-  
+  .cardpanier{
+    background: gray;
+    border: 1px solid black;
+    color: rgba(250, 250, 250, 0.8);
+    margin-bottom: 2rem;
+  }
+  .btn2{
+    border: 5px solid black;
+    border-image-slice: 1;
+  }

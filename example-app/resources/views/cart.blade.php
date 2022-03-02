@@ -4,11 +4,11 @@
 @section('h1', 'Panier')
 
 @section('contenue')
-<section class="h-100 h-custom" style="background-color: #d2c9ff;">
+<section class="h-100 h-custom" style="background-color: black">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-12">
-          <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+          <div class="card card-registration card-registration-2 cardpanier" style="border-radius: 15px;">
             <div class="card-body p-0">
               <div class="row g-0">
                 <div class="col-lg-8">
@@ -30,7 +30,7 @@
                         <h6 class="text-black mb-0">Cotton T-shirt</h6>
                       </div>
                       <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                        <button class="btn btn-link px-2"
+                        <button class="btn btn-link px-2 btn2"
                           onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                           <i class="fas fa-minus"></i>
                         </button>
@@ -38,7 +38,7 @@
                         <input id="form1" min="0" name="quantity" value="1" type="number"
                           class="form-control form-control-sm" />
   
-                        <button class="btn btn-link px-2"
+                        <button class="btn btn-link px-2 btn2"
                           onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                           <i class="fas fa-plus"></i>
                         </button>
@@ -64,7 +64,7 @@
                         <h6 class="text-black mb-0">Cotton T-shirt</h6>
                       </div>
                       <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                        <button class="btn btn-link px-2"
+                        <button class="btn btn-link px-2 btn2"
                           onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                           <i class="fas fa-minus"></i>
                         </button>
@@ -72,7 +72,7 @@
                         <input id="form1" min="0" name="quantity" value="1" type="number"
                           class="form-control form-control-sm" />
   
-                        <button class="btn btn-link px-2"
+                        <button class="btn btn-link px-2 btn2"
                           onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                           <i class="fas fa-plus"></i>
                         </button>
@@ -98,7 +98,7 @@
                         <h6 class="text-black mb-0">Cotton T-shirt</h6>
                       </div>
                       <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                        <button class="btn btn-link px-2"
+                        <button class="btn btn-link px-2 btn2"
                           onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                           <i class="fas fa-minus"></i>
                         </button>
@@ -106,7 +106,7 @@
                         <input id="form1" min="0" name="quantity" value="1" type="number"
                           class="form-control form-control-sm" />
   
-                        <button class="btn btn-link px-2"
+                        <button class="btn btn-link px-2 btn2"
                           onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                           <i class="fas fa-plus"></i>
                         </button>
