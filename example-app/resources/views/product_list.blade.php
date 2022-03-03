@@ -1,3 +1,7 @@
+@php
+use App\Models\Product;    
+@endphp
+
 @extends('template')
 @section('titre', 'Poduct List')
 
@@ -6,7 +10,8 @@
 @section('contenue')
     <div class="container mx-auto mt-4">
         <div class="row">
-            @foreach ($produit as $products)
+            {{-- @foreach ($produit as $products) --}}
+            @foreach (Product::all() as $products)
             <div class="col-md-4">
                 <div class="card" style="width: 18rem;">
                     <img src="{{ URL::asset($products->image)}}" class="card-img-top" alt="...">

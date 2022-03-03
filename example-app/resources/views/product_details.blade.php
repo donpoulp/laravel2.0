@@ -2,12 +2,12 @@
 @section('titre', 'Poduct')
 
 @section('h1')
-Produit
-@endsection
-
-@section('contenue')
 
 @foreach ($test as $test)
+{{$test->name}}
+
+@endsection
+@section('contenue')
 
 <img src="{{ URL::asset($test->image)}}" class="card-img-top" alt="...">
 
