@@ -26,11 +26,21 @@
         </div>
     </nav>
 
-    <h1 class="text-center">@yield('h1')</h1>
+    <h1 class="text-center mt-5 mb-5">@yield('h1')</h1>
 
-    <div class="content">
+    {{-- <div class="content mt-4"> --}}
         @yield('contenue')
-    </div>
+    {{-- </div> --}}
+
+    <footer>
+      <div class="container-fluid footer">
+        <div class="row align-items-center text-center">
+          <div class="col-md-12 align-items-center">
+                copyright by bibi@
+          </div>
+        </div>
+      </div>
+    </footer>
 
 
 

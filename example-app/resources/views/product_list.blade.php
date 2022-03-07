@@ -8,7 +8,7 @@ use App\Models\Product;
 @section('h1', 'Liste des produits')
 
 @section('contenue')
-    <div class="container mx-auto mt-4">
+    <div class="container">
         <div class="row">
             {{-- @foreach ($produit as $products) --}}
             @foreach (Product::all() as $products)

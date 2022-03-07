@@ -45,3 +45,15 @@
     border: 5px solid black;
     border-image-slice: 1;
   }
+  .footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: gray;
+    color: white;
+    text-align: center;
+    height: 70px;
+    
+      
+  }

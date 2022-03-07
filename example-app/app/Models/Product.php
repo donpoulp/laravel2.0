@@ -10,4 +10,14 @@ class Product extends Model
     use HasFactory;
 
     protected $table = 'produit';
+    protected $primaryKey = 'id';
+    public $incrementing = true;
+
+    protected $fillable = [
+        'name' => 'required',
+        'price' => 'required',
+        'description' => 'required',
+        'image' => 'required',
+    ];
+    
 }
