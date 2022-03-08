@@ -39,3 +39,5 @@ Route::get('/backoffice/delete/{id}', [BackofficeController::class, 'deleteProdu
 Route::get('/backoffice/update/{id}', [UpdateController::class, 'show']);
 
 Route::post('/backoffice/update/push/{id}', [UpdateController::class, 'updateProduct']);
+
+Route::get('/cart/{id}', [CartController::class, 'addProduct']);

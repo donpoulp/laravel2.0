@@ -18,7 +18,7 @@
                       <h6 class="mb-0 text-muted">3 items</h6>
                     </div>
                     <hr class="my-4">
-  
+  @foreach ($carts as $product)
                     <div class="row mb-4 d-flex justify-content-between align-items-center">
                       <div class="col-md-2 col-lg-2 col-xl-2">
                         <img
@@ -26,7 +26,7 @@
                           class="img-fluid rounded-3" alt="Cotton T-shirt">
                       </div>
                       <div class="col-md-3 col-lg-3 col-xl-3">
-                        <h6 class="text-muted">Shirt</h6>
+                        <h6 class="text-muted">{{$product->name}}</h6>
                         <h6 class="text-black mb-0">Cotton T-shirt</h6>
                       </div>
                       <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
@@ -50,8 +50,8 @@
                         <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
                       </div>
                     </div>
-  
-                    <hr class="my-4">
+  @endforeach
+                    {{-- <hr class="my-4">
   
                     <div class="row mb-4 d-flex justify-content-between align-items-center">
                       <div class="col-md-2 col-lg-2 col-xl-2">
@@ -117,7 +117,7 @@
                       <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                         <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
                       </div>
-                    </div>
+                    </div> --}}
   
                     <hr class="my-4">
   

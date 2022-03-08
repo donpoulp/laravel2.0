@@ -44,6 +44,13 @@ BackOffice
                              @enderror
                         </div>
 
+                        <div class="col-md-12">
+                            <input class="form-control @error('categorie_id') is-invalid @enderror" type="text" name="categorie_id" placeholder="Categorie" required>
+                            @error('categorie_id')
+                             <div class="invalid-feedback">Email field cannot be blank!</div>
+                             @enderror
+                        </div>
+
                         <div class="form-button mt-3">
                             <button id="submit" type="submit" class="btn btn-primary">Go</button>
                         </div>
@@ -100,7 +107,8 @@ BackOffice
                                 
                                     
                                     <div class="col-md-12 mx-auto justify-content-center">{{$product->id}}. {{$product->name}}
-                                        <img src="{{ URL::asset($product->image)}}" class="imgDelete pr-3" alt="...">
+                                        <img src="{{ URL::asset($product->image)}}" class="imgDelete" alt="...">
+                                       Categorie : {{$product->categorie_id}}. {{$product->categorie->name}}
                                         <a href="/public/backoffice/delete/{{$product->id}}" id="submit" type="submit" class="btn btnred col-md-2">Delete</a>
                     {{-- </form> --}}
                     {{-- <form action="/public/backoffice/update/{{$product->id}}" method="POST" class="requires-validation" novalidate>

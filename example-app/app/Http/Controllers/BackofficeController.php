@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use Illuminate\Support\Facades\Validator;
+use App\Models\Categorie;
 
 class BackofficeController extends Controller
 {
@@ -28,12 +29,14 @@ class BackofficeController extends Controller
         $newProduct->price = $request->input('price');
         $newProduct->description = $request->input('description');
         $newProduct->image = $request->input('image');
+        $newProduct->categorie_id = $request->input('categorie_id');
 
         $validator = Validator::make($request->all(),[
             'name' => 'bail|required|between:1,200',
             'price' => 'bail|required|integer|between:1,50000',
             'description' => 'bail|required',
-            'image' => 'bail|required|url'
+            'image' => 'bail|required|url',
+            'categorie_id' => 'bail|required'
         ]);
 
         if ($validator->fails()) {

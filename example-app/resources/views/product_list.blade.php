@@ -19,7 +19,7 @@ use App\Models\Product;
                             <h5 class="card-title">{{$products->name}}</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">{{$products->price}} $</h6>
                                     <p class="card-text">{{$products->description}}</p>
-                                        <a href="/public/cart" class="btn mr-2 btn1"><i class="fas fa-link"></i> Ajouter au Panier</a>
+                                        <a href="/public/cart/{{$products->id}}" class="btn mr-2 btn1"><i class="fas fa-link"></i> Ajouter au Panier</a>
                                         <a href="/public/product/{{$products->id}}" class="btn btn1"><i class="fab fa-github"></i> ...</a>
                         </div>
                 </div>

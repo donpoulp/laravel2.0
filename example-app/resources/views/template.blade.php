@@ -28,9 +28,9 @@
 
     <h1 class="text-center mt-5 mb-5">@yield('h1')</h1>
 
-    {{-- <div class="content mt-4"> --}}
+    <div class="container-fluid">
         @yield('contenue')
-    {{-- </div> --}}
+    </div>
 
     <footer>
       <div class="container-fluid footer">
