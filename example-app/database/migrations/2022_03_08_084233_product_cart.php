@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductHasPaniersTable extends Migration
+class ProductCart extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateProductHasPaniersTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_has_carts', function (Blueprint $table) {
+        Schema::create('product_cart', function (Blueprint $table) {
             $table->id();
-            $table->string('product_id');
-            $table->string('cart_id');
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ class CreateProductHasPaniersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_has_carts');
+        Schema::dropIfExists('product_cart');
     }
 }
