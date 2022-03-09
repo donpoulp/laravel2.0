@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Categorie;
+use App\Models\User;
 
 class BackofficeController extends Controller
 {
@@ -18,7 +19,8 @@ class BackofficeController extends Controller
 
     public function show(){
         $productList = Product::all();
-        return view('back_office',['productList' => $productList]);
+        $userList = User::all();
+        return view('back_office',['productList' => $productList, 'userList' => $userList]);
     }
 
     public function addProduct(Request $request){
@@ -57,4 +59,40 @@ class BackofficeController extends Controller
 
         return redirect('/backoffice');
     }
+
+    public function addUser(Request $request){
+
+        $validator = Validator::make($request->all(),[
+            'name' => 'bail|required|between:1,200',
+            'email' => 'bail|required',
+            'password' => 'bail|required',
+            'cart_id' => 'bail|required|integer'
+        ]);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
+
+        $newUser = new User();
+
+        $newUser->name = $request->input('name');
+        $newUser->email = $request->input('email');
+        $newUser->password = $request->input('password');
+        $newUser->cart_id = $request->input('cart_id');
+
+        $newUser->save();
+
+        return redirect('/backoffice');
+
+
+    }
+
+    public function deleteUser($id){
+        // $id = $request->input('id');
+
+        User::destroy($id);
+
+        return redirect('/backoffice');
+    }
 }
+

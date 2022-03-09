@@ -6,12 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Cart;
 use App\Models\Categorie;
+use App\Models\User;
 
 class Product extends Model
 {
     use HasFactory;
 
-    protected $table = 'produit';
+    protected $table = 'products';
     protected $primaryKey = 'id';
     public $incrementing = true;
 
@@ -21,9 +22,10 @@ class Product extends Model
         'description' => 'required',
         'image' => 'required',
     ];
-    // public function cart(){
-    //     return $this->belongToMany(Cart::class, 'carts');
-    // }
+
+    public function carts(){
+        return $this->belongsToMany(Cart::class);
+    }
     public function categorie(){
         return $this->belongsTo(Categorie::class);
     }

@@ -13,9 +13,10 @@ class ProductCart extends Migration
      */
     public function up()
     {
-        Schema::create('product_cart', function (Blueprint $table) {
+        Schema::create('cart_product', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->integer('product_id')->unsigned();
+            $table->integer('cart_id')->unsigned();
         });
     }
 
@@ -26,6 +27,6 @@ class ProductCart extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_cart');
+        Schema::dropIfExists('cart_product');
     }
 }

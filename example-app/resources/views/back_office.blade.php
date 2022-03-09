@@ -123,5 +123,90 @@ BackOffice
         </div>
     </div>
 
+    <div class="form-body">
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Add new user</h3>
+                        <form action="/public/backoffice/addUser" method="POST" class="requires-validation" novalidate>
+                            {{csrf_field()}}
+                            <div class="col-md-12">
+                               <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" placeholder="Name" required>
+                               @error('name')
+                               <div class="invalid-feedback">Name field cannot be blank!</div>
+                               @enderror
+                            </div>
+    
+                            <div class="col-md-12">
+                                <input class="form-control @error('email') is-invalid @enderror" type="text" name="email" placeholder="Email" required>
+                                @error('email')
+                                 <div class="invalid-feedback">Email field cannot be blank!</div>
+                                 @enderror
+                            </div>
+    
+                            <div class="col-md-12">
+                                <input class="form-control @error('password') is-invalid @enderror" type="text" name="password" placeholder="Password" required>
+                                @error('password')
+                                 <div class="invalid-feedback">Email field cannot be blank!</div>
+                                 @enderror
+                            </div>
+    
+                            <div class="col-md-12">
+                                <input class="form-control @error('cart_id') is-invalid @enderror" type="text" name="cart_id" placeholder="n° de commande associer" required>
+                                @error('cart_id')
+                                 <div class="invalid-feedback">Email field cannot be blank!</div>
+                                 @enderror
+                            </div>
+    
+                            {{-- <div class="col-md-12">
+                                <input class="form-control @error('categorie_id') is-invalid @enderror" type="text" name="categorie_id" placeholder="Categorie" required>
+                                @error('categorie_id')
+                                 <div class="invalid-feedback">Email field cannot be blank!</div>
+                                 @enderror
+                            </div> --}}
+    
+                            <div class="form-button mt-3">
+                                <button id="submit" type="submit" class="btn btn-primary">Go</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+
+    <div class="row">
+        <div class="form-content">
+            <div class="form-items">
+                <h3 class='mb-4'>Users </h3>
+                
+                @foreach ($userList as $user)
+                <div class="form-items2 mb-3">
+                    {{-- <form action="/public/backoffice/delete/{{$product->id}}" method="POST" class="requires-validation" novalidate>
+                        {{csrf_field()}} --}}
+                        
+                            <div class="row col-md-12 pr-3">
+                            {{-- <select class="form-select mt-3" required> --}}
+                                {{-- <option selected disabled value="">Choice product</option> --}}
+                                   
+
+                                
+                                    
+                                    <div class="col-md-12 mx-auto justify-content-center">{{$user->id}}. {{$user->name}} / Commande n°{{$user->carts->id}}
+                                       {{-- Categorie : {{$product->categorie_id}}. {{$product->categorie->name}} --}}
+                                         <a href="/public/backoffice/deleteUser/{{$user->id}}" id="submit" type="submit" class="btn btnred col-md-2">Delete</a>
+                    {{-- </form> --}}
+                    {{-- <form action="/public/backoffice/update/{{$product->id}}" method="POST" class="requires-validation" novalidate>
+                        {{csrf_field()}} --}}
+                                        {{-- <a  href="/public/backoffice/update/{{$product->id}}" id="submit" type="submit" class="btn btnorange col-md-2">Update</a> --}}
+                                    </div> 
+                                {{-- </form>             --}}
+                            </div>
+                </div> 
+                @endforeach       
+            </div>
+        </div>
+    </div>
+
 
 @endsection

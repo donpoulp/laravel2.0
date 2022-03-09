@@ -9,28 +9,37 @@ use Illuminate\Support\Facades\Validator;
 
 class CartController extends Controller
 {
-    // public function show()
-    // {
-    //     $carts = Cart::find(1)->product()->orderBy('name')->get();
-    //     return view('cart',['carts' => $carts]);
-    // }
     public function show(){
-        $carts = Cart::all();
-        return view('cart',['carts' => $carts]);
+        $carts = Cart::find(1);
+
+        // $total
+        $A = 0;
+        $B = 0;
+        foreach($carts->products as $product){
+         $A = $product->price;
+         $B+=$A;  
+        }
+
+        return view('cart',['cart' => $carts, 'total' => $B]);
     }
     public function addProduct($id){
 
-        $newCart = new Cart();
+        $product = Product::find($id);
+        $cart = Cart::find(1);
 
-        $addProductToCart = Product::find($id);
-
-        $newCart->id =  $addProductToCart->id;
-        $newCart->quantity + 1;
-
-        $addProductToCart->save();
+        $cart->products()->attach($product);
 
         return redirect('/cart');
 
 
+    }
+    public function deleteProduct($id){
+
+        $product = Product::find($id);
+        $cart = Cart::find(1);
+
+        $cart->products()->detach($product);
+
+        return redirect('/cart');
     }
 }
